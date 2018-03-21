@@ -1,19 +1,11 @@
 package com.noob.databurialpoint;
 
-import com.fooww.soft.android.Application.AppLike;
-import com.fooww.soft.android.DataAccessLayer.DBManager;
-import com.fooww.soft.android.DataModel.Entity.FeatureEventTracksEntity;
-import com.fooww.soft.android.DataModel.Entity.FeatureId;
-import com.fooww.soft.android.DataModel.Entity.FunctionId;
-import com.fooww.soft.android.Utility.DateUtil;
+
+import android.util.Log;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-
-import java.util.List;
-import java.util.Locale;
-import java.util.UUID;
 
 /**
  * Created by xiaoqi on 2018/3/13
@@ -32,7 +24,14 @@ public class StatisticsInstrumentation {
 
 	private void calculate(Statistics statistics){
 		if(statistics != null){
-
+			Log.e(TAG, "对" + statistics.function().getFunctionName() + "进行统计");
+			// select * from FunctionsTable where operatorId=statistics.getFunctionId()
+			//if(size > 0){
+			// int counts = operateCounts ++
+			// update FunctionsTable set operateCounts = counts
+			// }else {
+			// insert into FunctionsTable values (xxx, statistics.getFunctionId(), 1)
+			// }
 		}
 	}
 }

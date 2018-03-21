@@ -16,4 +16,8 @@ public enum Function {
 		this.functionId = functionId;
 		this.functionName = functionName;
 	}
+
+	public String getFunctionName() {
+		return functionName;
+	}
 }
